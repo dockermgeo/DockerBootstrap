@@ -3,11 +3,19 @@
 Booting Dockercontainer and make any things...
 
 ### Installation
+
 ```
 git clone https://github.com/git-mgeo/DockerBootstrap.git
 cd DockerBootstrap
 make
 ```
+
+#### Dependencies
+* jq
+
+Using on
+*  Ubuntu: apt get install -yq 
+*  Alpine: apk add -yq 
 
 After installing Dockerbootstrap you'll find this structure:
 ```
