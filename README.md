@@ -5,7 +5,7 @@ Booting Dockercontainer and make any things...
 ### Installation
 
 ```
-git clone https://github.com/git-mgeo/DockerBootstrap.git
+git clone https://github.com/dockermgeo/DockerBootstrap.git
 cd DockerBootstrap
 make
 ```
