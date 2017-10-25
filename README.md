@@ -15,12 +15,10 @@ After installing Dockerbootstrap you'll find this structure:
 ```
 /etc/docker/up.d/
 /etc/docker/modules/
-/boot
-/app
+/boot.sh
+/app.sh
 ```
 * **/boot** Mainscript calling /etc/docker/modules/init
 * **/app** Startscript of app
 * **modules** include default initscript and other functions
 * **up.d** place which each Shellscript will startet
-
-
