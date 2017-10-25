@@ -5,7 +5,7 @@ updir=/etc/docker/up.d
 
 for mod in $(ls ${mdir}/*.sh); do
   echo " * Sourcing $mod"
-  source $mod
+  . $mod
 done
 #
 # INIT
