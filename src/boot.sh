@@ -18,5 +18,4 @@ done
 #
 # Starting
 #
-chmod a+x /app.sh
 /app.sh
