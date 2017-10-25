@@ -12,6 +12,7 @@ done
 #
 for ups in $(ls ${updir}/*.sh); do
   chmod a+x $ups
+  echo " * Starting $ups"
   $ups
 done
 
