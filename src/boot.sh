@@ -10,8 +10,8 @@ done
 #
 # INIT
 #
+chmod a+x -R $updir
 for ups in $(ls ${updir}/*.sh); do
-  chmod a+x $updir
   $updir
 done
 
