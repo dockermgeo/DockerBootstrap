@@ -5,7 +5,7 @@ updir=/etc/docker/up.d
 for mod in $(ls ${mdir}/*.sh); do
   chmod a+x $mod
   echo " * Sourcing $mod"
-  . ${mdir}/$mod
+  . $mod
 done
 #
 # INIT
