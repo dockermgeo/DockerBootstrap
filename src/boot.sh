@@ -20,7 +20,7 @@ done
 #
 # Starting app
 #
-nohup /app.sh &
+/app.sh &> /app.log
 
 
 #
@@ -32,4 +32,4 @@ for pups in $(ls ${postdir}/*.sh); do
   $pups
 done
 
-tail -f nohup.out
+tail -f /app.log
