@@ -14,6 +14,7 @@ After installing Dockerbootstrap you'll find this structure:
 
 ```
 /etc/docker/up.d/
+/etc/docker/postup.d/
 /etc/docker/modules/
 /boot.sh
 /app.sh
@@ -22,3 +23,4 @@ After installing Dockerbootstrap you'll find this structure:
 * **/app** Startscript of app
 * **modules** include default initscript and other functions
 * **up.d** place which each Shellscript will startet
+* **postup.d** place which each Shellscript will startet after MAIN-APP started
