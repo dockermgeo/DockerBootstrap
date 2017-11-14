@@ -20,7 +20,7 @@ done
 #
 # Starting app
 #
-/app.sh &> /app.log
+/app.sh &> /app.log &
 
 
 #
