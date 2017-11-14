@@ -22,5 +22,5 @@ After installing Dockerbootstrap you'll find this structure:
 * **/boot** Mainscript calling /etc/docker/modules/init
 * **/app** Startscript of app
 * **modules** include default initscript and other functions
-* **up.d** place which each Shellscript will startet
-* **postup.d** place which each Shellscript will startet after MAIN-APP started
+* **up.d** place where each Shellscript will startet
+* **postup.d** place where each Shellscript will startet after MAIN-APP started
