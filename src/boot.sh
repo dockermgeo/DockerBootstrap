@@ -21,7 +21,7 @@ done
 # Starting app
 #
 echo "">/app.log
-/app.sh &
+$(/app.sh &) >>/dev/null
 
 
 #
