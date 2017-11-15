@@ -2,6 +2,8 @@
 
 Booting Dockercontainer and make any things...
 
+![Architecture](docs/doboot-architektur.png)
+
 ### Installation
 
 ```
@@ -13,16 +15,14 @@ make
 After installing Dockerbootstrap you'll find this structure:
 
 ```
-/etc/docker/up.d/
-/etc/docker/postup.d/
-/etc/docker/modules/
 /boot.sh
 /app.sh
+/etc/docker/modules/
+/etc/docker/up.d/
+/etc/docker/postup.d/
 ```
+* **/app** Startscript of your app
 * **/boot** Mainscript calling /etc/docker/modules/init
-* **/app** Startscript of app
 * **modules** include default initscript and other functions
 * **up.d** place where each Shellscript will startet
 * **postup.d** place where each Shellscript will startet after MAIN-APP started
-
-![Architecture](docs/doboot-architektur.png)
