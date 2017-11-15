@@ -23,8 +23,7 @@ done
 #
 # Starting app
 #
-echo "">/app.log
-$(/app.sh &) >>/dev/null
+/app.sh &
 
 
 #
@@ -36,4 +35,4 @@ for pups in $(ls ${postdir}/*.sh); do
   $pups
 done
 
-tail -f /app.log
+fg 1
