@@ -1,6 +1,7 @@
 # DockerBootstrap
 
-Booting Dockercontainer and make any things before Service start or make thins after Service is started. It's up to you!
+Booting Dockercontainer and make any things before Service start or make thins after Service is started.
+It's up to you!
 
 ![Architecture](docs/doboot-architektur.png)
 
