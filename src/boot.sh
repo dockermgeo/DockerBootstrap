@@ -15,6 +15,9 @@ done
 for ups in $(ls ${updir}/*.sh); do
   echo " * Starting up.d $ups"
   $ups
+  if [ $? > 0 ]; then
+    exit;
+  fi
 done
 
 #
