@@ -1,6 +1,6 @@
 # DockerBootstrap
 
-Booting Dockercontainer and make any things...
+Booting Dockercontainer and make any things before Service start or make thins after Service is started. It's up to you!
 
 ![Architecture](docs/doboot-architektur.png)
 
@@ -16,7 +16,7 @@ After installing Dockerbootstrap you'll find this structure:
 
 ```
 /boot.sh
-/app.sh
+/app.sh (your appfile)
 /etc/docker/modules/
 /etc/docker/up.d/
 /etc/docker/postup.d/
