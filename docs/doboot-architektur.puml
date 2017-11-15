@@ -1,0 +1,16 @@
+@startuml
+skinparam handwritten true
+
+interface stdout
+node app.sh
+node boot.sh
+cloud up.d
+cloud postup.d
+
+boot.sh -> stdout
+postup.d -> boot.sh
+app.sh -> boot.sh
+up.d -> boot.sh
+
+
+@enduml
