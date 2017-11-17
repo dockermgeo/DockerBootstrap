@@ -35,4 +35,5 @@ for pups in $(ls ${postdir}/*.sh); do
   $pups
 done
 
-fg 1
+#fg 1
+touch /tmp/pit && tail -f /tmp/pit
