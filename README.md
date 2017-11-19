@@ -29,4 +29,4 @@ After installing Dockerbootstrap you'll find this structure:
 * **postup.d** place where each Shellscript will startet after MAIN-APP started
 
 ### Special Keystore
-A simple Redisclient without complicated installationprocess ist [CliReds](https://github.com/dockermgeo/CliReds).
+A simple Redisclient without complicated installationprocess is [CliReds](https://github.com/dockermgeo/CliReds).
