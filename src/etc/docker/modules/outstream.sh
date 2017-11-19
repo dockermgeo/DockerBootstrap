@@ -9,9 +9,6 @@ info () {
 infolog () {
 	echo " [INFO] $1">>${pidfile}
 }
-startupinfo () {
-	echo " [INFO] Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">${pidfile}
-}
 
 # WARNING
 warn () {
