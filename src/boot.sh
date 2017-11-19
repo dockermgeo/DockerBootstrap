@@ -16,11 +16,6 @@ pidfile=${pidfile:-"/tmp/pid"}
 echo "">${pidfile}
 
 
-for mod in $(ls ${mdir}/*.sh 2> /dev/null); do
-  info "loading -> $mod"
-  . $mod
-done
-
 #
 # INIT up.d
 #

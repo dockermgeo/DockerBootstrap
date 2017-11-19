@@ -1,5 +1,6 @@
 #!/bin/sh
 
+. /etc/docker/modules/outstream.sh
 if [ ! -f ${TARGET_FILE} ]; then
   error "${!TARGET_FILE} not exists!"
   exit 1;
