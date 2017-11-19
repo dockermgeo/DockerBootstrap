@@ -36,4 +36,7 @@ for pups in $(ls ${postdir}/*.sh); do
 done
 
 #fg 1
-touch /tmp/pit && tail -f /tmp/pit
+pidfile=/tmp/pit
+touch ${pidfile}
+echo "pid=$(ps -ef|grep nginx  |grep off|awk '{ print $2 }')">>${pidfile}
+tail -f ${pidfile}
