@@ -9,7 +9,7 @@ postdir=/etc/docker/postup.d
 POST_WATING_TIME=${POST_WATING_TIME:-10};
 
 for mod in $(ls ${mdir}/*.sh 2> /dev/null); do
-  echo " * Sourcing $mod"
+  echo " [INFO] Loading $mod"
   . $mod
 done
 
@@ -17,7 +17,7 @@ done
 # INIT up.d
 #
 for ups in $(ls ${updir}/*.sh 2> /dev/null); do
-  echo " * up.d -> $ups"
+  info "up.d -> $ups"
   $ups
   if [ $? -gt 0 ]; then
     exit;
@@ -34,14 +34,14 @@ done
 #
 pidfile=/tmp/pit
 touch ${pidfile}
-echo " * Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">>${pidfile}
+echo " [INFO] Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">>${pidfile}
 
 #
 # INIT postup.d
 #
 sleep ${POST_WATING_TIME};
 for pups in $(ls ${postdir}/*.sh 2> /dev/null); do
-  echo " * POST-up.d -> $pups"
+  info "POST-up.d -> $pups"
   $pups
 done
 
