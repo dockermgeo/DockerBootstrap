@@ -8,8 +8,9 @@ updir=/etc/docker/up.d
 postdir=/etc/docker/postup.d
 POST_WATING_TIME=${POST_WATING_TIME:-10};
 
+. /etc/docker/modules/outstream.sh
 for mod in $(ls ${mdir}/*.sh 2> /dev/null); do
-  echo " [INFO] Loading $mod"
+  info "loading -> $mod"
   . $mod
 done
 
@@ -32,9 +33,7 @@ done
 #
 # Write PID-File to stdout
 #
-pidfile=/tmp/pit
-touch ${pidfile}
-echo " [INFO] Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">>${pidfile}
+startupinfo
 
 #
 # INIT postup.d
@@ -49,4 +48,5 @@ done
 # Hold Session
 #
 #fg 1
+pidfile=${pidfile:-"/tmp/pid"}
 tail -f ${pidfile}
