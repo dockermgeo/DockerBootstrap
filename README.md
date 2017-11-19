@@ -27,3 +27,6 @@ After installing Dockerbootstrap you'll find this structure:
 * **modules** include default initscript and other functions
 * **up.d** place where each Shellscript will startet
 * **postup.d** place where each Shellscript will startet after MAIN-APP started
+
+### Special Keystore
+A simple Redisclient without complicated installationprocess ist [CliReds](https://github.com/dockermgeo/CliReds).
