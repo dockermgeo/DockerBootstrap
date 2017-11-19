@@ -27,6 +27,14 @@ done
 
 
 #
+# Write PID-File to stdout
+#
+sleep 1
+pidfile=/tmp/pit
+touch ${pidfile}
+echo "pid=$(ps -ef|grep nginx  |grep off|awk '{ print $2 }')">>${pidfile}
+
+#
 # INIT postup.d
 #
 sleep ${POST_WATING_TIME};
@@ -35,8 +43,8 @@ for pups in $(ls ${postdir}/*.sh); do
   $pups
 done
 
+#
+# Hold Session
+#
 #fg 1
-pidfile=/tmp/pit
-touch ${pidfile}
-echo "pid=$(ps -ef|grep nginx  |grep off|awk '{ print $2 }')">>${pidfile}
 tail -f ${pidfile}
