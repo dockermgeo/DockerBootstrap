@@ -5,36 +5,36 @@ runlevel=${LOG_LEVEL:-"INFO"}
 
 # INFO
 info () {
-	echo " [INFO] $1"
+	echo " dockerboot [INFO] $1"
 }
 infolog () {
-	echo " [INFO] $1">>${pidfile}
+	echo " dockerboot [INFO] $1">>${pidfile}
 }
 
 # INFO
 debug () {
 	if [ "${runlevel}" = "DEBUG" ]; then
-		echo " [DEBUG] $1"
+		echo " dockerboot [DEBUG] $1"
 	fi
 }
 debuglog () {
 	if [ "${runlevel}" = "DEBUG" ]; then
-		echo " [DEBUG] $1">>${pidfile}
+		echo " dockerboot [DEBUG] $1">>${pidfile}
 	fi
 }
 
 # WARNING
 warn () {
-	echo " [WARNING] $1"
+	echo " dockerboot [WARNING] $1"
 }
 warnlog () {
-	echo " [WARNING] $1">>${pidfile}
+	echo " dockerboot [WARNING] $1">>${pidfile}
 }
 
 # ERROR
 error () {
-	echo " [ERROR] $1"
+	echo " dockerboot [ERROR] $1"
 }
 errorlog () {
-	echo " [ERROR] $1">>${pidfile}
+	echo " dockerboot [ERROR] $1">>${pidfile}
 }
