@@ -13,12 +13,12 @@ infolog () {
 
 # INFO
 debug () {
-	if [ "${runlevel}" = "DEBUG"]; then
+	if [ "${runlevel}" = "DEBUG" ]; then
 		echo " [DEBUG] $1"
 	fi
 }
 debuglog () {
-	if [ "${runlevel}" = "DEBUG"]; then
+	if [ "${runlevel}" = "DEBUG" ]; then
 		echo " [DEBUG] $1">>${pidfile}
 	fi
 }
