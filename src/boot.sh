@@ -35,7 +35,7 @@ done
 #
 # Write PID-File to stdout
 #
-echo " [INFO] Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">>${pidfile}
+echo " [$(date +'%Y.%m.%d-%H:%M:%S')] [INFO] dockerboot - Startinfo { 'started':'$(date +'%Y.%m.%d-%H:%M:%S')', 'pid':'$(ps -ef|grep /app.sh  |grep -v grep |awk '{ print $2 }')' }">>${pidfile}
 
 #
 # INIT postup.d

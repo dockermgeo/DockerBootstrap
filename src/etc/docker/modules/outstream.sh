@@ -2,49 +2,51 @@
 
 pidfile=${pidfile:-"/tmp/pid"}
 runlevel=${LOG_LEVEL:-"INFO"}
+rundate=$(date +'%Y.%m.%d-%H:%M:%S')
+
 
 # INFO
 info () {
 	if [ "${runlevel}" != "ERROR" ]; then
-		echo " dockerboot [INFO] $1"
+		echo "[${rundate}] [INFO] dockerboot - $1"
 	fi
 }
 infolog () {
 	if [ "${runlevel}" != "ERROR" ]; then
-		echo " dockerboot [INFO] $1">>${pidfile}
+		echo "[${rundate}] [INFO] dockerboot - $1">>${pidfile}
 	fi
 }
 
 # INFO
 debug () {
 	if [ "${runlevel}" = "DEBUG" ]; then
-		echo " dockerboot [DEBUG] $1"
+		echo "[${rundate}] [DEBUG] dockerboot - $1"
 	fi
 }
 debuglog () {
 	if [ "${runlevel}" = "DEBUG" ]; then
-		echo " dockerboot [DEBUG] $1">>${pidfile}
+		echo "[${rundate}] [DEBUG] dockerboot - $1">>${pidfile}
 	fi
 }
 
 # WARNING
 warn () {
-	echo " dockerboot [WARNING] $1"
+	echo "[${rundate}] [WARNING] dockerboot - $1"
 }
 warnlog () {
-	echo " dockerboot [WARNING] $1">>${pidfile}
+	echo "[${rundate}] [WARNING] dockerboot - $1">>${pidfile}
 }
 warning () {
-	echo " dockerboot [WARNING] $1"
+	echo "[${rundate}] [WARNING] dockerboot - $1"
 }
 warninglog () {
-	echo " dockerboot [WARNING] $1">>${pidfile}
+	echo "[${rundate}] [WARNING] dockerboot - $1">>${pidfile}
 }
 
 # ERROR
 error () {
-	echo " dockerboot [ERROR] $1"
+	echo "[${rundate}] [ERROR] dockerboot - $1"
 }
 errorlog () {
-	echo " dockerboot [ERROR] $1">>${pidfile}
+	echo "[${rundate}] [ERROR] dockerboot - $1">>${pidfile}
 }
