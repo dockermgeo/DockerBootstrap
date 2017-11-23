@@ -21,7 +21,7 @@ echo "">${pidfile}
 #
 for ups in $(ls ${updir}/*.sh 2> /dev/null); do
   info "up.d -> $ups"
-  $ups
+  . $ups
   if [ $? -gt 0 ]; then
     exit;
   fi
