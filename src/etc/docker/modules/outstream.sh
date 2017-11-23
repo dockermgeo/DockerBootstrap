@@ -1,14 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 pidfile=${pidfile:-"/tmp/pid"}
 runlevel=${LOG_LEVEL:-"INFO"}
 
 # INFO
 info () {
-	echo " dockerboot [INFO] $1"
+	if [ "${runlevel}" != "ERROR" ]; then
+		echo " dockerboot [INFO] $1"
+	fi
 }
 infolog () {
-	echo " dockerboot [INFO] $1">>${pidfile}
+	if [ "${runlevel}" != "ERROR" ]; then
+		echo " dockerboot [INFO] $1">>${pidfile}
+	fi
 }
 
 # INFO
@@ -28,6 +32,12 @@ warn () {
 	echo " dockerboot [WARNING] $1"
 }
 warnlog () {
+	echo " dockerboot [WARNING] $1">>${pidfile}
+}
+warning () {
+	echo " dockerboot [WARNING] $1"
+}
+warninglog () {
 	echo " dockerboot [WARNING] $1">>${pidfile}
 }
 
