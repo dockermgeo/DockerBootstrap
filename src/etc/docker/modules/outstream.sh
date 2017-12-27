@@ -11,6 +11,15 @@ info () {
 		echo "[${rundate}] [INFO] dcboot $(hostname) - $1"
 	fi
 }
+
+stepsMax=${stepsMax:-2}
+stepCur=${stepCur:-0}
+infocounter () {
+  stepCur=$(($stepCur + 1))
+  echo "[${rundate}] [${stepCur}/${stepsMax}] $1"
+}
+
+
 infolog () {
 	if [ "${runlevel}" != "ERROR" ]; then
 		echo "[${rundate}] [INFO] dcboot $(hostname) - $1">>${pidfile}
