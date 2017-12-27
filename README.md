@@ -27,7 +27,7 @@ After installing Dockerbootstrap you'll find this structure:
 * **modules** include default initscript and other functions
 * **up.d** place where each Shellscript will startet
 * **postup.d** place where each Shellscript will startet after MAIN-APP started
-* **postinstall.d** It's not part of bootstrapping. But it's usefull on docker build
+* **postinstall.d** It's not part of bootstrapping. But it's usefull on docker build by calling ***/etc/docker/postinstall.sh***.
 
 ### Special Keystore
 A simple Redisclient without complicated installationprocess is [CliReds](https://github.com/dockermgeo/CliReds).
