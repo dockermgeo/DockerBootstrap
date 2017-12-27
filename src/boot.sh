@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-
+. /etc/docker/modules/outstream.sh
 #
 # Variables
 #
 mdir=/etc/docker/modules
 updir=/etc/docker/up.d
-postdir=/etc/docker/postup.d
+postinstalldir=/etc/docker/postinstall.d
+postupdir=/etc/docker/postup.d
 POST_WATING_TIME=${POST_WATING_TIME:-10};
 
 #
 # PREPARE
 #
-. /etc/docker/modules/outstream.sh
 pidfile=${pidfile:-"/tmp/pid"}
 echo "">${pidfile}
 
@@ -41,7 +41,7 @@ echo " [$(date +'%Y.%m.%d-%H:%M:%S')] [INFO] dockerboot - Startinfo { 'started':
 # INIT postup.d
 #
 sleep ${POST_WATING_TIME};
-for pups in $(ls ${postdir}/*.sh 2> /dev/null); do
+for pups in $(ls ${postupdir}/*.sh 2> /dev/null); do
   info "POST-up.d -> $pups"
   $pups
 done
