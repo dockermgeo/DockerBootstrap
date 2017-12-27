@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 stepsMax=2
 #
-. /etc/docker/modules/outstream.sh
 stepCur=0
+. /etc/docker/modules/outstream.sh
 
 #
 ## Set ACC
@@ -12,7 +12,7 @@ chmod -v a+x /*.sh
 
 #
 ## Cleanup
-infocounter "Cleanup Global"
+infocounter "Cleanup Global's"
 rm -Rvf /etc/docker/postinstall*
 rm -Rvf /tmp/Docker* >>/dev/null
 rm -Rvf /tmp/.* >>/dev/null
