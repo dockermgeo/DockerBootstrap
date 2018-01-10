@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-
+#
+# Version: 17
 F_JSON=${1:-"/tmp/.rm.json"}
+#
+
 function jqb_add () {
   F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
   if [ ! -f ${F_JSON_TMP} ]; then
@@ -10,6 +13,30 @@ function jqb_add () {
   grep "${2}" ${F_JSON_TMP}
   if [ ${?} -eq 1 ]; then
       echo "\"$2\"," >>$F_JSON_TMP
+  fi
+}
+
+function jqb_addString () {
+  F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
+  if [ ! -f ${F_JSON_TMP} ]; then
+    echo "" >${F_JSON_TMP}
+  fi
+
+  grep "${2}" ${F_JSON_TMP}
+  if [ ${?} -eq 1 ]; then
+      echo "\"$2\"," >>$F_JSON_TMP
+  fi
+}
+
+function jqb_addObj () {
+  F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
+  if [ ! -f ${F_JSON_TMP} ]; then
+    echo "" >${F_JSON_TMP}
+  fi
+
+  grep "${2}" ${F_JSON_TMP}
+  if [ ${?} -eq 1 ]; then
+      echo "$2," >>$F_JSON_TMP
   fi
 }
 
