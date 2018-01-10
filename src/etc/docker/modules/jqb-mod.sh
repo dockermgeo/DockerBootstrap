@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Version: 1.21
+# Version: 1.22
 F_JSON=${1:-"/tmp/.rm.json"}
 create_date=$(date +'%Y.%m.%d-%H:%M:%S')
 #
