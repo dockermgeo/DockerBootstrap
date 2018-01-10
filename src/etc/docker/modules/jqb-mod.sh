@@ -13,7 +13,6 @@ function jqb_add () {
   fi
 }
 
-
 function jqb_build_dataarray () {
   F_JSON=$1
   F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
@@ -21,9 +20,14 @@ function jqb_build_dataarray () {
   L=${#C_JSON_TMP}
   NL=$(($L-1))
   echo "{\"data\":[$(echo ${C_JSON_TMP:0:$NL})]}">${F_JSON}
+  nicer_json ${F_JSON}
   rm -f ${F_JSON_TMP}
 }
 
+function nicer_json() {
+  jq . ${1} >${1}.nicer
+  mv ${1}.nicer ${1}
+}
 
 function jqb_get () {
   getField=$1
