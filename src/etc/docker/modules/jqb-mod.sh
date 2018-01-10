@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
-# Version: 18
+# Version: 1.21
 F_JSON=${1:-"/tmp/.rm.json"}
+create_date=$(date +'%Y.%m.%d-%H:%M:%S')
 #
 
 function jqb_add () {
@@ -20,11 +21,23 @@ function jqb_addString () {
   F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
   if [ ! -f ${F_JSON_TMP} ]; then
     echo "" >${F_JSON_TMP}
-  else
-    grep "${2}" ${F_JSON_TMP}
-    if [ ${?} -eq 1 ]; then
-        echo "\"$2\"," >>$F_JSON_TMP
-    fi
+  fi
+
+  grep "${2}" ${F_JSON_TMP}
+  if [ ${?} -eq 1 ]; then
+      echo "\"$2\"," >>$F_JSON_TMP
+  fi
+}
+
+function jqb_addEl () {
+  F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
+  if [ ! -f ${F_JSON_TMP} ]; then
+    echo "" >${F_JSON_TMP}
+  fi
+
+  grep "${2}" ${F_JSON_TMP}
+  if [ ${?} -eq 1 ]; then
+      echo "\"$2\"," >>$F_JSON_TMP
   fi
 }
 
@@ -32,11 +45,11 @@ function jqb_addObj () {
   F_JSON_TMP=$(dirname $1)/.$(basename $1).tmp
   if [ ! -f ${F_JSON_TMP} ]; then
     echo "" >${F_JSON_TMP}
-  else
-    grep "${2}" ${F_JSON_TMP}
-    if [ ${?} -eq 1 ]; then
-        echo "$2," >>$F_JSON_TMP
-    fi
+  fi
+
+  grep "${2}" ${F_JSON_TMP}
+  if [ ${?} -eq 1 ]; then
+      echo "$2," >>$F_JSON_TMP
   fi
 }
 
@@ -46,7 +59,7 @@ function jqb_build_dataarray () {
   C_JSON_TMP=$(cat ${F_JSON_TMP})
   L=${#C_JSON_TMP}
   NL=$(($L-1))
-  echo "{\"data\":[$(echo ${C_JSON_TMP:0:$NL})]}">${F_JSON}
+  echo "{\"create_date\":\"${create_date}\",\"data\":[$(echo ${C_JSON_TMP:0:$NL})]}">${F_JSON}
   nicer_json ${F_JSON}
   rm -f ${F_JSON_TMP}
 }
